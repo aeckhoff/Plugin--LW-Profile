@@ -1,0 +1,52 @@
+<h2>User Profile</h2>
+<!-- lw:if error -->
+<div class="lwprofile_error">
+    Error(s) occured!
+</div>
+<!-- lw:endif error -->
+<form action="<!-- lw:var action -->" method="POST">
+    <div class="lwprofile_field_wrapper">
+        <div class="lwprofile_label">
+            Email / Login
+        </div>
+        <div class="lwprofile_input">
+            <input type="text" name="name" value="<!-- lw:var name -->" />
+        </div>
+        <!-- lw:if name_email -->
+            <div class="lwprofile_error">The name must be an email address</div>
+        <!-- lw:endif name_email -->
+        <!-- lw:if name_toolong -->
+            <div class="lwprofile_error">The name is too long</div>
+        <!-- lw:endif name_toolong -->
+        <!-- lw:if name_tooshort -->
+            <div class="lwprofile_error">The name is too short</div>
+        <!-- lw:endif name_tooshort -->
+        
+    </div>
+    <div class="lwprofile_field_wrapper">
+        <div class="lwprofile_label">
+            Password
+        </div>
+        <div class="lwprofile_input">
+            <input type="password" name="pw1" />
+        </div>
+        <!-- lw:if password_notequal -->
+            <div class="lwprofile_error">The passwords are not equal</div>
+        <!-- lw:endif password_notequal -->
+        <!-- lw:if password_toolong -->
+            <div class="lwprofile_error">The password is too long</div>
+        <!-- lw:endif password_toolong -->
+        <!-- lw:if password_tooshort -->
+            <div class="lwprofile_error">The password is too short</div>
+        <!-- lw:endif password_tooshort -->
+    </div>
+    <div class="lwprofile_field_wrapper">
+        <div class="lwprofile_label">
+            Password repeat
+        </div>
+        <div class="lwprofile_input">
+            <input type="password" name="pw2" />
+        </div>
+    </div>
+    <input type="submit" value="send" />
+</form>
